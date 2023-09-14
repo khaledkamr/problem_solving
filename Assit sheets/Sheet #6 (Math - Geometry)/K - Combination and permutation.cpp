@@ -3,21 +3,28 @@
 #include<iomanip>
 #include<algorithm>
 #include<math.h>
-#include <cstring>
 #define ll long long
 using namespace std;
 
-int main()
+ll fact(int n)
 {
-	double n, digits = 0;
-	cin >> n;
+	ll fact = 1;
 
 	for (int i = 2; i <= n; i++)
 	{
-		digits += log10(i);
+		fact *= i;
 	}
 
-	cout << "Number of digits of " << n << "! is " << ceil(digits);
+	return fact;
+}
+
+int main()
+{
+	int a, b;
+	cin >> a >> b;
+
+	cout << fact(a) / (fact(a - b) * fact(b)) << " ";
+	cout << fact(a) / fact(a - b);
 
 	return 0;
 }
