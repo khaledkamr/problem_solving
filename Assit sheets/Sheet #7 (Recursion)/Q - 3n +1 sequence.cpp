@@ -4,24 +4,30 @@ using namespace std;
 
 int Count = 0;
 
-int Log2(ll x)
+int seq(int x)
 {
+    Count++;
+
     if (x == 1)
     {
         cout << Count;
         return 0;
     }
-
-    Count++;
-
-    return Log2(x / 2);
+    else if (x % 2 == 0)
+    {
+        return seq(x / 2);
+    }
+    else
+    {
+        return seq(3 * x + 1);
+    }
 }
 
 int main()
 {
-    ll n;
+    int n;
     cin >> n;
-    Log2(n);
+    seq(n);
 
     return 0;
 }
