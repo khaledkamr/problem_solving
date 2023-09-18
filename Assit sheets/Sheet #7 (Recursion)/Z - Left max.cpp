@@ -1,20 +1,33 @@
 #include<iostream>
+#include<algorithm>
 #define ll long long
 using namespace std;
 
-int howManyWays(int s, int e)
+int printMax(int arr[], int size, int max, int indx)
 {
-	if (s >= e)
+	if (indx == size)
 	{
-		return s == e;
+		return 0;
+	}
+	if (arr[indx] > max)
+	{
+		max = arr[indx];
 	}
 
-	return howManyWays(s + 1, e) + howManyWays(s + 2, e) + howManyWays(s + 3, e);
+	cout << max << " ";
+	return printMax(arr, size, max, indx + 1);
 }
 
 int main()
 {
-	int a, b;
-	cin >> a >> b;
-	cout << howManyWays(a, b);
+	int size, arr[100000];
+	cin >> size;
+
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+
+	cout << arr[0] << " ";
+	printMax(arr, size, arr[0], 1);
 }
