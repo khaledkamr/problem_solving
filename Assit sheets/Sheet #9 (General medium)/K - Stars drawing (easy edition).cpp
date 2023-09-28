@@ -10,22 +10,24 @@
 #define IOS ios_base::sync_with_stdio(false); cin.tie(NULL);
 using namespace std;
 
-int n, m;
 const int s = 101;
 char g[s][s];
 int v[s][s];
 vector<pair<pair<int, int>, int> > star;
+int n, m;
 
 void add(int row, int col, int size)
 {
-	int move = col + size, c = col;
+	int move = col + size;
+	int c = col;
 
 	while (c <= move)
 	{
 		v[row][c] = 1;
 		c++;
 	}
-	move = col - size, c = col;
+	move = col - size;
+	c = col;
 
 	while (c >= move)
 	{
@@ -40,7 +42,8 @@ void add(int row, int col, int size)
 		v[r][col] = 1;
 		r++;
 	}
-	move = row - size, r = row;
+	move = row - size;
+	r = row;
 
 	while (r >= move)
 	{
@@ -68,17 +71,17 @@ int check(int row, int col)
 	}
 	int r = row;
 
-	while (r <= n && g[r][col] == '*')
-	{
-		down++;
-		r++;
-	}
-	r = row;
-
 	while (r >= 1 && g[r][col] == '*')
 	{
 		up++;
 		r--;
+	}
+	r = row;
+
+	while (r <= n && g[r][col] == '*')
+	{
+		down++;
+		r++;
 	}
 
 	return min(min(left - 1, right - 1), min(up - 1, down - 1));
@@ -106,7 +109,7 @@ int main()
 
 				if (size > 0)
 				{
-					star.push_back({ {i,j},size });
+					star.push_back({ {i,j}, size });
 					add(i, j, size);
 				}
 			}
@@ -121,7 +124,7 @@ int main()
 			{
 				if (v[i][j] != 1)
 				{
-					cout << -1 << endl;
+					cout << -1;
 					return 0;
 				}
 			}
@@ -132,8 +135,6 @@ int main()
 
 	for (int i = 0; i < star.size(); i++)
 	{
-		cout << star[i].first.first << " ";
-		cout << star[i].first.second << " ";
-		cout << star[i].second << endl;
+		cout << star[i].first.first << " " << star[i].first.second << " " << star[i].second << endl;
 	}
 }
