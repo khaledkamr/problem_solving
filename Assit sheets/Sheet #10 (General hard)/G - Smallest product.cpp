@@ -17,12 +17,17 @@ int main()
 	double n, product = 0;
 	cin >> n;
 	vector<ll> vec(n);
+	vector<ll>::iterator it;
 
 	for (int i = 0; i < n; i++)
 	{
 		cin >> vec.at(i);
-		product += log10(vec.at(i));
 	}
+
+    for(it = vec.begin(); it < vec.end(); it++)
+    {
+        product += log10(*it);
+    }
 
 	cout << (ll)ceil(pow(10, product / n));
 }
