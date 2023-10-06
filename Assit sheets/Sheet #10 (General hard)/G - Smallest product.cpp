@@ -17,7 +17,6 @@ int main()
 	double n, product = 0;
 	cin >> n;
 	vector<ll> vec(n);
-	vector<ll>::iterator it;
 
 	for (int i = 0; i < n; i++)
 	{
