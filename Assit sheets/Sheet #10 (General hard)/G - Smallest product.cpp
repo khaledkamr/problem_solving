@@ -31,3 +31,15 @@ int main()
 
 	cout << (ll)ceil(pow(10, log_product / n));
 }
+
+// product = A0 * A1 * A2 *...An
+// x = new product
+// x^n > product
+// log10(x^n) > log10(product)
+// n * log10(x) > log10(product)
+// n * log10(x) > log10(A0 * A1 * A2 *...An)
+// n * log10(x) > log10(A0) + log10(A1) +...log10(An)
+// n * log10(x) > log_product
+// log10(x) > log_product / n
+// 10^log10(x) > 10^( log_product / n)
+// x > 10^( log_product / n)
