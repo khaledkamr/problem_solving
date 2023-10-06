@@ -14,7 +14,7 @@ using namespace std;
 int main()
 {
 	IOS;
-	double n, product = 0;
+	double n, log_product = 0;
 	cin >> n;
 	vector<ll> vec(n);
 	vector<ll>::iterator it;
@@ -26,8 +26,8 @@ int main()
 
     for(it = vec.begin(); it < vec.end(); it++)
     {
-        product += log10(*it);
+        log_product += log10(*it);
     }
 
-	cout << (ll)ceil(pow(10, product / n));
+	cout << (ll)ceil(pow(10, log_product / n));
 }
