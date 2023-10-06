@@ -24,10 +24,10 @@ int main()
 		cin >> vec.at(i);
 	}
 
-    for(it = vec.begin(); it < vec.end(); it++)
-    {
-        product += log10(*it);
-    }
+        for(it = vec.begin(); it < vec.end(); it++)
+        {
+                product += log10(*it);
+        }
 
 	cout << (ll)ceil(pow(10, product / n));
 }
