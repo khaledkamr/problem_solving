@@ -1,41 +1,42 @@
-//Time limit exceeded on test 104
-
 #include<iostream>
+#include<cstdlib>
 #include<string>
-#include<iomanip>
+#include<numeric> 
 #include<algorithm>
 #include<math.h>
+#include<cmath>
+#include<iomanip>
+#include<vector>
+#include<utility>
+#define ll long long
+#define IOS ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(0);
 using namespace std;
 
 int main()
 {
-	long long e, m, b, counter = 0;
+	IOS;
+	ll eye, mouth, body, res = 0;
+	cin >> eye >> mouth >> body;
 
-	cin >> e >> m >> b;
-
-
-	while (e > 0 && m > 0 && b > 0)
+	if (eye == 0 || body == 0)
 	{
-		counter++;
-		e--;
-		m--;
-		b--;
+		cout<<0;
 	}
-	while (e > 1 && b > 0)
+	else
 	{
-		counter++;
-		e -= 2;
-		b--;
+		if ((mouth >= eye && mouth >= body) || (mouth >= body && mouth < eye)
+		    || (mouth < body && mouth >= eye))
+		{
+			res = min (eye,body);
+			cout<<res<<endl;
+		} 
+		else if(mouth < body && mouth < eye)
+		{
+			res = mouth;
+			eye -= mouth;
+			body -= mouth;
+			res += min(eye/2, body);
+			cout<<res;
+		}
 	}
-	while (e > 1 && m > 0 && b > 0)
-	{
-		counter++;
-		e -= 2;
-		m--;
-		b--;
-	}
-
-	cout << counter;
-
-	return 0;
 }
