@@ -33,7 +33,6 @@ bool check(string x, string y)
 			return true;
 		}
 	}
-	
 	return false;
 }
 
