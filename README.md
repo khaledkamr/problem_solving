@@ -1,6 +1,6 @@
 # problem_solving
 
-Welcome to the Problem Solving Solutions repository! This repository contains solutions for various assist sheets on Codeforces, specifically designed for beginners in problem-solving and programming. The solutions provided here are aimed at helping you practice and master the basics of your programming language.
+Welcome to the Problem Solving Solutions repository! This repository contains solutions for various [assist sheets](https://codeforces.com/group/MWSDmqGsZm/contests) on Codeforces, specifically designed for beginners in problem-solving and programming. The solutions provided here are aimed at helping you practice and master the basics of your programming language.
 
 ## Overview
 
@@ -10,8 +10,8 @@ This repository covers all the fundamental topics essential for beginners. The p
 
 - **Basic Syntax and Operations**
 - **Control Structures (Conditionals and Loops)**
-- **Functions and Recursion**
 - **String Manipulations**
+- **Functions and Recursion**
 - **Searching and Sorting Algorithms**
 - **Mathematical Problems**
 - **General Problem-Solving Techniques**
